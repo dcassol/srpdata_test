@@ -10,7 +10,7 @@ jobs:
     name: trigger_pull
     runs-on: ubuntu-20.04
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PAT: ${{ secrets.rmd }}
     steps:
       #- uses: actions/checkout@v2
       # - name: update version number
