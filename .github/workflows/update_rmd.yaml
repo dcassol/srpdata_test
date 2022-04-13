@@ -13,30 +13,30 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      - name: update version number
-        run: |
-            git pull
-            awk -F. '{$3++;print > "cwl/repo_version.txt"}' OFS=. cwl/repo_version.txt
-      - name: Update github
-        run: |
-          git config --local user.name "dcassol"
-          git config --local user.email "danicassol@gmail.com"
-          git add -A
-          git commit -m "Bot update cwl description files" -a
+      # - name: update version number
+      #   run: |
+      #       git pull
+      #       awk -F. '{$3++;print > "cwl/repo_version.txt"}' OFS=. cwl/repo_version.txt
+      # - name: Update github
+      #   run: |
+      #     git config --local user.name "dcassol"
+      #     git config --local user.email "danicassol@gmail.com"
+      #     git add -A
+      #     git commit -m "Bot update cwl description files" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-      - name: Dispatch event SPR
+      - name: Dispatch event SPtemplate_test
         uses: peter-evans/repository-dispatch@v1
         with:
-          token: ${{ secrets.CWL }}
-          repository: 'tgirke/systemPipeR'
-          event-type: cwl-updated
-      - name: Dispatch event SPRdata
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.CWL }}
-          repository: 'tgirke/systemPipeRdata'
-          event-type: cwl-updated
+          token: ${{ secrets. }}
+          repository: 'dcassol/SPtemplate_test'
+          event-type: rmd-updated
+      # - name: Dispatch event SPRdata
+      #   uses: peter-evans/repository-dispatch@v1
+      #   with:
+      #     token: ${{ secrets.CWL }}
+      #     repository: 'tgirke/systemPipeRdata'
+      #     event-type: cwl-updated
