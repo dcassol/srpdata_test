@@ -12,22 +12,22 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.RMD }}
     steps:
-      #- uses: actions/checkout@v2
-      # - name: update version number
-      #   run: |
-      #       git pull
-      #       awk -F. '{$3++;print > "cwl/repo_version.txt"}' OFS=. cwl/repo_version.txt
-      # - name: Update github
-      #   run: |
-      #     git config --local user.name "dcassol"
-      #     git config --local user.email "danicassol@gmail.com"
-      #     git add -A
-      #     git commit -m "Bot update cwl description files" -a
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     branch: ${{ github.ref }}
+      - uses: actions/checkout@v2
+      - name: update version number
+        run: |
+            git pull
+            awk -F. '{$3++;print > "vignettes/repo_version.txt"}' OFS=. vignettes/repo_version.txt
+      - name: Update github
+        run: |
+          git config --local user.name "dcassol"
+          git config --local user.email "danicassol@gmail.com"
+          git add -A
+          git commit -m "Bot update rmd description files" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
       - name: Dispatch event SPtemplate_test
         uses: peter-evans/repository-dispatch@v1
         with:
