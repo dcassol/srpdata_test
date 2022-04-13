@@ -31,7 +31,7 @@ jobs:
       - name: Dispatch event SPtemplate_test
         uses: peter-evans/repository-dispatch@v1
         with:
-          token: ${{ secrets. }}
+          token: ${{ secrets.CWL }}
           repository: 'dcassol/SPtemplate_test'
           event-type: rmd-updated
       # - name: Dispatch event SPRdata
