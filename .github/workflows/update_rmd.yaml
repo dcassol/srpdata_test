@@ -12,7 +12,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      #- uses: actions/checkout@v2
       # - name: update version number
       #   run: |
       #       git pull
