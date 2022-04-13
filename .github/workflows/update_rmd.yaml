@@ -10,7 +10,7 @@ jobs:
     name: trigger_pull
     runs-on: ubuntu-20.04
     env:
-      GITHUB_PAT: ${{ secrets.rmd }}
+      GITHUB_PAT: ${{ secrets.RMD }}
     steps:
       #- uses: actions/checkout@v2
       # - name: update version number
@@ -31,7 +31,7 @@ jobs:
       - name: Dispatch event SPtemplate_test
         uses: peter-evans/repository-dispatch@v1
         with:
-          token: ${{ secrets.rmd }}
+          token: ${{ secrets.RMD }}
           repository: 'dcassol/SPtemplate_test'
           event-type: rmd-updated
       # - name: Dispatch event SPRdata
