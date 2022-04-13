@@ -29,14 +29,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
       - name: Dispatch event SPtemplate_test
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.RMD }}
           repository: 'dcassol/SPtemplate_test'
           event-type: rmd-updated
-      # - name: Dispatch event SPRdata
-      #   uses: peter-evans/repository-dispatch@v1
-      #   with:
-      #     token: ${{ secrets.CWL }}
-      #     repository: 'tgirke/systemPipeRdata'
-      #     event-type: cwl-updated
