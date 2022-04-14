@@ -1,5 +1,5 @@
 ---
-title: "ChIP-Seq Workflow Template" 
+title: "ChIP-Seq Workflow Template_test" 
 author: "Author: Daniela Cassol (danielac@ucr.edu) and Thomas Girke (thomas.girke@ucr.edu)"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
@@ -17,10 +17,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-<!--
-# Compile from command-line
-Rscript -e "rmarkdown::render('systemPipeChIPseq.Rmd', c('BiocStyle::html_document'), clean=FALSE); knitr::knit('systemPipeChIPseq.Rmd', tangle=TRUE)"; Rscript -e "rmarkdown::render('systemPipeChIPseq.Rmd', c('BiocStyle::pdf_document'))"
--->
 
 ```{css, echo=FALSE}
 pre code {
