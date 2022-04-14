@@ -24,6 +24,7 @@ cp -r ${down_folder}/vignettes/systemPipeRIBOseq.Rmd ${update_dir}/extdata/workf
 cp -r ${down_folder}/vignettes/bibtex.bib ${update_dir}/extdata/workflows/riboseq/
 cd ${update_dir}/extdata/workflows/riboseq/
 Rscript -e "rmarkdown::render('systemPipeRIBOseq.Rmd', c('BiocStyle::html_document'), clean=T); knitr::knit('systemPipeRIBOseq.Rmd', tangle=TRUE)"
+rm -rf *cache/
 cd ../../../../
 echo "done ribo"
 
@@ -31,6 +32,7 @@ cp -r ${down_folder}/vignettes/systemPipeChIPseq.Rmd ${update_dir}/extdata/workf
 cp -r ${down_folder}/vignettes/bibtex.bib ${update_dir}/extdata/workflows/chipseq/
 cd ${update_dir}/extdata/workflows/chipseq/
 Rscript -e "rmarkdown::render('systemPipeChIPseq.Rmd', c('BiocStyle::html_document'), clean=T); knitr::knit('systemPipeChIPseq.Rmd', tangle=TRUE)"
+rm -rf *cache/
 cd ../../../../
 echo "done chip"
 
@@ -38,6 +40,7 @@ cp -r ${down_folder}/vignettes/systemPipeRNAseq.Rmd ${update_dir}/extdata/workfl
 cp -r ${down_folder}/vignettes/bibtex.bib ${update_dir}/extdata/workflows/rnaseq/
 cd ${update_dir}/extdata/workflows/rnaseq/
 Rscript -e "rmarkdown::render('systemPipeRNAseq.Rmd', c('BiocStyle::html_document'), clean=T); knitr::knit('systemPipeRNAseq.Rmd', tangle=TRUE)"
+rm -rf *cache/
 cd ../../../../
 echo "done rna"
 
@@ -45,10 +48,10 @@ cp -r ${down_folder}/vignettes/systemPipeVARseq.Rmd ${update_dir}/extdata/workfl
 cp -r ${down_folder}/vignettes/bibtex.bib ${update_dir}/extdata/workflows/varseq/
 cd ${update_dir}/extdata/workflows/varseq/
 Rscript -e "rmarkdown::render('systemPipeVARseq.Rmd', c('BiocStyle::html_document'), clean=T); knitr::knit('systemPipeVARseq.Rmd', tangle=TRUE)"
+rm -rf *cache/
 cd ../../../../
-
 echo "done var"
 
 # cleaning
-echo "Clean update folder ${down_folder}"
-#rm -rf down_folder
+echo "Clean update folder \"${down_folder}\""
+rm -rf ${down_folder}
